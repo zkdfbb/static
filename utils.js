@@ -64,7 +64,7 @@ function parseUrl(url) {
       for (;i<len;i++) {
         if (!seg[i]) { continue; }
         s = seg[i].split('=');
-        ret[s[0]] = decodeURIComponent(s[1]);
+        ret[s[0]] = decodeURIComponent(s[1]).replace('+', ' ');
       }
       return ret;
     })(),
